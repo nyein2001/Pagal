@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "859999173959",
+    "firebase_url": "https://yangon-foods-default-rtdb.firebaseio.com",
+    "project_id": "yangon-foods",
+    "storage_bucket": "yangon-foods.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859999173959:android:b056a8033f733c41666062",
+        "android_client_info": {
+          "package_name": "com.service.mediataggingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859999173959-3gqr48p2gtpm49jliu1j30sak0rg7com.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.service.mediataggingapp",
+            "certificate_hash": "2a01f49952d0b6e3ec0082f1fe8bf28993cde890"
+          }
+        },
+        {
+          "client_id": "859999173959-cekq7slq1dc51v5fnnl8mfv6kvsldh8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcD7NX8lcRbajmJBzdQDV4da4-O2kxTFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859999173959-cekq7slq1dc51v5fnnl8mfv6kvsldh8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
