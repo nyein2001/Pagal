@@ -5,4 +5,6 @@
     <string name="web_client_id">859999173959-cekq7slq1dc51v5fnnl8mfv6kvsldh8d.apps.googleusercontent.com</string>
     <string name="no_internet_title">No Internet Connection</string>
     <string name="no_internet_message">Please Try Again</string>
+    <string name="switch_light">Off</string>
+    <string name="switch_night">On</string>
 </resources>
