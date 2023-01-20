@@ -7,4 +7,15 @@
     <string name="no_internet_message">Please Try Again</string>
     <string name="switch_light">Off</string>
     <string name="switch_night">On</string>
+    <string name="new_project">New Project</string>
+    <string name="enter_project_name">Enter a name for this project</string>
+    <string name="cancel">Cancel</string>
+    <string name="create_project">Create Project</string>
+    <string name="project">Project</string>
+    <string name="tags">Tags</string>
+    <string name="enter_tag_name">Enter Tag Name</string>
+    <string name="new_tag">New Tag</string>
+    <string name="create_tag">Create Tag</string>
+    <string name="done">Done</string>
+    <string name="enter_hashtag">Enter HashTag</string>
 </resources>

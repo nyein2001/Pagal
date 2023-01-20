@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tags"
+        android:icon="@drawable/tags"
+        android:title="@string/tags"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/add_item"
+        android:title="Add Item"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/add_tag"
+        android:title="Add Tag"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/sort"
+        android:title="Sort"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/rename"
+        android:title="Rename Project"
+        app:showAsAction="never" />
+</menu>

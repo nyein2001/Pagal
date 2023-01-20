@@ -24,8 +24,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.service.mediataggingapp.R
 import com.service.mediataggingapp.model.UserDetailsInfo
-import com.service.mediataggingapp.utils.InitApplication
+import com.service.mediataggingapp.utils.InitTheme
 import com.service.mediataggingapp.utils.NetworkCheck.isConnected
+import java.util.*
 
 class AuthActivity : AppCompatActivity() {
 
@@ -36,7 +37,7 @@ class AuthActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var database: DatabaseReference
-    private lateinit var init: InitApplication
+    private lateinit var init: InitTheme
 
     @BindView(R.id.sign_in_with_google)
     lateinit var googleSignInBtn: MaterialCardView
@@ -61,7 +62,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun initTheme() {
-        init = InitApplication(this)
+        init = InitTheme(this)
         if (init.isNightModeEnabled()) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             nightModeSwitchIcon.setImageDrawable(
@@ -140,7 +141,11 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun storeUserDetails(userDetails: FirebaseUser?) {
-        val userInfo = UserDetailsInfo(userDetails!!.displayName, userDetails.email, userDetails.photoUrl.toString())
+        val userInfo = UserDetailsInfo(
+            userDetails!!.uid, userDetails.displayName,
+            userDetails.photoUrl.toString(), userDetails.email,
+            Calendar.getInstance().time.toString(), Calendar.getInstance().time.toString()
+        )
         database.child("users").child(userDetails.uid).setValue(userInfo)
     }
 

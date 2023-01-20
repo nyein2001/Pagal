@@ -5,7 +5,7 @@ import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 
 
-class InitApplication(context: Context) {
+class InitTheme(context: Context) {
 
     private var isNightModeEnabled = false
 

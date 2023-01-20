@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.ItemActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -15,10 +15,22 @@
             android:id="@+id/material_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/main_menu"
-            app:navigationIcon="@drawable/account"
-            app:title="@string/app_name"
-            app:titleCentered="true" />
+            android:background="@android:color/transparent"
+            app:navigationIcon="@drawable/done"
+            app:title="@string/project"
+            app:titleCentered="true">
+
+            <TextView
+                android:id="@+id/media_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                app:drawableStartCompat="@drawable/upload" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -27,12 +39,9 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/project_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="true"
-            android:padding="10dp" />
+        <include
+            android:id="@+id/include_item_content"
+            layout="@layout/include_item_content" />
 
     </androidx.core.widget.NestedScrollView>
 

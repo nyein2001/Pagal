@@ -1,5 +1,7 @@
 package com.service.mediataggingapp.model
 
-import android.net.Uri
-
-data class UserDetailsInfo(val name: String? = null, val email: String? = null, val photo: String? = null)
+data class UserDetailsInfo(
+    var user_id: String? = null, var name: String? = null,
+    var profile_pic: String? = null, var email: String? = null,
+    var created_at: String? = null, var last_seen_at: String? = null
+)

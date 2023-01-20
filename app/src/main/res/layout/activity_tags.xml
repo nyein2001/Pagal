@@ -15,10 +15,19 @@
             android:id="@+id/material_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/main_menu"
             app:navigationIcon="@drawable/account"
-            app:title="@string/app_name"
-            app:titleCentered="true" />
+            app:title="@string/tags"
+            app:titleCentered="true">
+
+            <TextView
+                android:id="@+id/add_new_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New"
+                android:layout_gravity="end"
+                android:layout_marginEnd="22dp"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -28,7 +37,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/project_recycler_view"
+            android:id="@+id/tag_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="true"

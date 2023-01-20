@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.ItemActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -15,9 +15,9 @@
             android:id="@+id/material_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/main_menu"
-            app:navigationIcon="@drawable/account"
-            app:title="@string/app_name"
+            app:menu="@menu/item_menu"
+            app:navigationIcon="@drawable/back_arrow"
+            app:title="@string/project"
             app:titleCentered="true" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -28,7 +28,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/project_recycler_view"
+            android:id="@+id/posts_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="true"
