@@ -176,13 +176,13 @@ class AuthActivity : AppCompatActivity() {
         nightModeSwitch.setOnClickListener {
             if (AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_YES) {
                 init.setIsNightModeEnabled(true)
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, AuthActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                 finish()
                 startActivity(intent)
             } else {
                 init.setIsNightModeEnabled(false)
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, AuthActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                 finish()
                 startActivity(intent)

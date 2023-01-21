@@ -9,10 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
@@ -28,17 +30,26 @@ import com.google.firebase.ktx.Firebase
 import com.service.mediataggingapp.R
 import com.service.mediataggingapp.adapters.ProjectAdapter
 import com.service.mediataggingapp.model.ProjectInfo
+import com.service.mediataggingapp.model.UserDetailsInfo
 import com.service.mediataggingapp.utils.InitTheme
 import com.service.mediataggingapp.utils.NetworkCheck.isConnected
 import com.service.mediataggingapp.utils.Presenter
+import com.service.mediataggingapp.utils.Tools
+import com.service.mediataggingapp.view.ProfileView
 import com.service.mediataggingapp.view.ProjectView
 import java.util.*
 
 
-class MainActivity : AppCompatActivity(), ProjectView {
+class MainActivity : AppCompatActivity(), ProjectView, ProfileView {
 
     @BindView(R.id.material_toolbar)
     lateinit var toolbar: MaterialToolbar
+
+    @BindView(R.id.profile)
+    lateinit var profileBtn: CardView
+
+    @BindView(R.id.profile_image)
+    lateinit var profileImage: ImageView
 
     @BindView(R.id.project_recycler_view)
     lateinit var recyclerView: RecyclerView
@@ -58,7 +69,7 @@ class MainActivity : AppCompatActivity(), ProjectView {
         }
         setContentView(R.layout.activity_main)
         ButterKnife.bind(this)
-        presenter = Presenter(this)
+        presenter = Presenter(this, this)
         initComponent()
         toolbarItemAction()
         showData()
@@ -70,7 +81,7 @@ class MainActivity : AppCompatActivity(), ProjectView {
     }
 
     private fun toolbarItemAction() {
-        toolbar.setNavigationOnClickListener {
+        profileBtn.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
@@ -88,6 +99,7 @@ class MainActivity : AppCompatActivity(), ProjectView {
 
     private fun showData() {
         presenter.getProjects()
+        presenter.getUserInfo()
     }
 
     private fun addProjectDialog() {
@@ -113,7 +125,9 @@ class MainActivity : AppCompatActivity(), ProjectView {
 
         createBtn.setOnClickListener {
             if (!TextUtils.isEmpty(edtProjectName.text.toString())) {
+                val id = db.collection("projects").document().id
                 val projectInfo = ProjectInfo(
+                    id,
                     edtProjectName.text.toString(),
                     Calendar.getInstance().time.toString(),
                     Calendar.getInstance().time.toString()
@@ -167,6 +181,10 @@ class MainActivity : AppCompatActivity(), ProjectView {
 
     override fun hideLoading() {
 
+    }
+
+    override fun setProfile(profile: UserDetailsInfo) {
+       Tools.displayImageOriginal(applicationContext, profileImage, profile.profile_pic!!)
     }
 
     override fun setProject(projectList: List<ProjectInfo>) {

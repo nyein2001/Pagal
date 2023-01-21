@@ -95,7 +95,7 @@ class ItemActivity : AppCompatActivity(), ItemView {
     override fun hideLoading() {
     }
 
-    override fun setProject(posts: List<ItemInfo>) {
+    override fun setItems(posts: List<ItemInfo>) {
         postsRecyclerView.layoutManager = GridLayoutManager(this, 4)
         postsRecyclerView.setHasFixedSize(false)
         postsRecyclerView.itemAnimator = DefaultItemAnimator()

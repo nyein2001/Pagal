@@ -108,7 +108,7 @@ class TagsActivity : AppCompatActivity(), TagView {
         TODO("Not yet implemented")
     }
 
-    override fun setProject(hashtags: List<Hashtag>) {
+    override fun setTags(hashtags: List<Hashtag>) {
         recyclerView.layoutManager = GridLayoutManager(this, 4)
         recyclerView.setHasFixedSize(false)
         recyclerView.itemAnimator = DefaultItemAnimator()

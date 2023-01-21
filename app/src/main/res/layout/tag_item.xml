@@ -2,8 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tag_item"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="80dp"
+    android:layout_height="100dp"
     android:layout_margin="5dp"
     android:clickable="true"
     android:focusable="true"
@@ -11,33 +11,25 @@
     app:cardCornerRadius="10dp"
     app:cardElevation="3dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
-
         <ImageView
             android:id="@+id/tag_icon"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:contentDescription="@string/todo"
-            android:padding="5dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/hashtag_icon" />
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:src="@drawable/background" />
 
         <TextView
             android:id="@+id/tag_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:padding="3dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textSize="14sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="75dp"
             android:singleLine="true"
             android:text="@string/tags" />
 
-    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

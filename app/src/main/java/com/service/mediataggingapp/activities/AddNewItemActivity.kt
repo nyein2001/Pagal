@@ -352,7 +352,7 @@ class AddNewItemActivity : AppCompatActivity(), TagView {
     override fun hideLoading() {
     }
 
-    override fun setProject(hashtags: List<Hashtag>) {
+    override fun setTags(hashtags: List<Hashtag>) {
         suggestItemAdapter.setHashTagList(applicationContext, hashtags)
     }
 
